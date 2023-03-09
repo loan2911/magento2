@@ -4,26 +4,53 @@ namespace Robin\Bai2\Controller\Index;
 class Index extends \Magento\Framework\App\Action\Action
 {
 
+    protected $bannerFactory;
+
+    public function __construct(\Magento\Framework\App\Action\Context $context, \Robin\Bai2\Model\BannerFactory $bannerFactory)
+    {
+        $this->bannerFactory = $bannerFactory;
+        parent::__construct($context);
+    }
+
     public function execute()
     {
-        /**
-         * Insert random data
-         */
-        $extension = ['.png', '.jpg', '.gif'];
-        $url = ['https://www.google.com.vn/', 'http://www.w3schools.com/', 'https://techmaster.vn/'];
+        // Init collection
+        $collection = $this->bannerFactory->create()->getCollection();
 
-        for ($i = 1; $i <= 100; $i++) {
-            // Create new instance before insert
-            $banner = $this->_objectManager->create('Robin\Bai2\Model\Banner');
+        // SELECT * FROM banner
+        $data = $collection->getData();
 
-            // Insert data
-            $banner->addData([
-                'link' => $url[rand(0, 2)],
-                'image' => 'image' . $i . $extension[rand(0, 2)],
-                'sort_order' => $i,
-                'status' => rand(0, 1)
-            ])->save();
-        }
+        // SELECT * FROM banner WHERE id > 50
+//        $data = $collection->addFieldToFilter('id', ['gt' => 50])->getData();
+
+        // SELECT id FROM banner WHERE id > 50
+//        $data = $collection->addFieldToSelect('id')
+//            ->addFieldToFilter('id', ['gt' => 50])->getData();
+
+        // SELECT * FROM banner WHERE image LIKE '%.png'
+//        $data = $collection->addFieldToFilter('image', ['like' => '%.png'])->getData();
+
+        print_r(json_encode($data));
+
+        // SELECT * FROM banner WHERE image LIKE '%.png' AND id > 50
+//        $query = $collection->addFieldToFilter('image', ['like' => '%.png'])
+//            ->addFieldToFilter('id', ['gt' => 50])
+//            ->getSelect();
+
+        // SELECT * FROM banner WHERE (image LIKE '%.png' OR image LIKE '%.jpg') AND id > 50
+//        $query = $collection->addFieldToFilter('id', ['gt' => 50])
+//            ->addFieldToFilter('image', [
+//                ['like' => '%.png'],
+//                ['like' => '%.jpg']
+//            ])->getSelect();
+
+        // SELECT * FROM banner WHERE id > 50 OR image LIKE '%.jpg'
+//        $query = $collection->addFieldToFilter(['id', 'image'], [
+//            ['gt' => 50],
+//            ['like' => '%.png']
+//        ])->getSelect();
+
+//        echo $query;
 
         echo "<br/>Done.";
         exit;
