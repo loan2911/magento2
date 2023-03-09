@@ -25,20 +25,6 @@ class Index extends \Magento\Framework\App\Action\Action
             ])->save();
         }
 
-        /**
-         * Select, update, delete
-         */
-//        // Select record with id = 1
-//        $banner = $this->_objectManager->create('Robin\Bai2\Model\Banner');
-//        $data = $banner->load(1)->getData();
-//        print_r(json_encode($data));
-//
-//        // Update selected record
-//        $data->setImage('logo.png')->setLink('google.com')->save();
-//
-//        // Delete selected record
-//        $data->delete();
-
         echo "<br/>Done.";
         exit;
     }
