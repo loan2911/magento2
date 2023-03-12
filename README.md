@@ -35,4 +35,10 @@ Bai3: tao menu admin trong magento2
     -id đảm bảo là duy nhất trong mỗi module id="Mageplaza_HelloWorld::helloworld" (tìm id =helloworld trong module Mageplaza_HelloWorld)
     -title là hiển thị của menu 
     -resource phân quyền menu ACL cho người dùng
+Bai4: tao mot menu config trong magento2
+**************
+    menu config đươc xác đinh trong tệp etc>adminhtml>system.xml
+    trong đó có thành phần tên resource testcontroller_config sẽ được khai báo để sử dụng call từ menu admin từ bai3 đến
+    
+    
     
