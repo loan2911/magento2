@@ -39,6 +39,10 @@ Bai4: tao mot menu config trong magento2
 **************
     menu config đươc xác đinh trong tệp etc>adminhtml>system.xml
     trong đó có thành phần tên resource testcontroller_config sẽ được khai báo để sử dụng call từ menu admin từ bai3 đến
+Bai5:Cerate ACL (k hieu lawm, hinh như giống phân qyền odoo)
+**************
+    lol má ông Tú lừa tao bảo anh thây nó code giống odoo làm t tường học cái khác vệ tinh
+    giờ ngôn ngữ khác, khai báo cũng khó vãi cả lol đọc mãi đéo hết
     
     
     
