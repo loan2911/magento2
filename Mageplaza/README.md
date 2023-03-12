@@ -8,6 +8,8 @@ Sau khi khai báo thì tiến hành active module mới để kiểm tra module 
     -php bin/magento module:enable module_name 
     -update lại DB: magento setup:upgrade
     -php bin/magento setup:static-content:deploy -f
+    -php bin/magento c:f
+
 ***********
 Bai2:
 Khai báo, sử dụng Controller
@@ -20,5 +22,8 @@ Khai báo Controller trỏ vào từ font_end:
         <module name="Robin_Bai1" />
     </route>
     trong đó FrontName được sử dụng để làm chỉ mục cho con trỏ trỏ vào từ fontend
+    
+    file layout khai báo có cú pháp tenmodule_controller_classcontroller:
+    vd: testcontroller_index_index.xml (testcontroller là tên module, index_index là đường dẫn đến khai báo class controller)
 ****
     
