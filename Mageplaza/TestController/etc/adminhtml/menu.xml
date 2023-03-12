@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mageplaza_TestController::new" title="MENU TEST" module="Mageplaza_TestController" sortOrder="52" resource="Mageplaza_TestController::helloworld"/>
+        <add id="Mageplaza_TestController::post" title="Manage Posts" module="Mageplaza_TestController" sortOrder="10" action="Mageplaza_TestController/post" resource="Mageplaza_TestController::post"  parent="Mageplaza_TestController::new"/>
+        <add id="Mageplaza_TestController::hello_configuration" title="Configuration" module="Mageplaza_TestController" sortOrder="99" resource="Mageplaza_TestController::testcontroller_config" parent="Mageplaza_TestController::new" action="adminhtml/system_config/edit/section/helloworld"/>
+    </menu>
+</config>

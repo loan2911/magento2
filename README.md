@@ -28,4 +28,17 @@ Khai báo Controller trỏ vào từ font_end:
     vd: testcontroller_index_index.xml (testcontroller là tên module, index(1) folder,index(2) là đường dẫn đến khai báo class controller)
     helloworld_index_display (helloworld là tên module, index(1) folder,display(2) là đường dẫn đến khai báo class controller)
 ****
+Bai3: tao menu admin trong magento2
+***************
+    menu trong magento được cấu hình trong file etc-> adminxml ->menu.xml
+    <add id="Mageplaza_HelloWorld::helloworld" title="Hello World" module="Mageplaza_HelloWorld" sortOrder="51" resource="Mageplaza_HelloWorld::helloworld"/>
+    -id đảm bảo là duy nhất trong mỗi module id="Mageplaza_HelloWorld::helloworld" (tìm id =helloworld trong module Mageplaza_HelloWorld)
+    -title là hiển thị của menu 
+    -resource phân quyền menu ACL cho người dùng
+Bai4: tao mot menu config trong magento2
+**************
+    menu config đươc xác đinh trong tệp etc>adminhtml>system.xml
+    trong đó có thành phần tên resource testcontroller_config sẽ được khai báo để sử dụng call từ menu admin từ bai3 đến
+    
+    
     
